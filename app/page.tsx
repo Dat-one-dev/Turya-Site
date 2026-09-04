@@ -10,31 +10,31 @@ const activities = [
     number: "01",
     title: "Hackathons & Game Jams",
     text: "Weekend sprints where rough ideas become playable, working things — built together and shipped together.",
-    href: "#contact",
+    href: "/events",
   },
   {
     number: "02",
     title: "Content & Design",
     text: "Writing, video, and visuals — learning to make things people actually want to watch, read, and share.",
-    href: "#contact",
+    href: "/media",
   },
   {
     number: "03",
     title: "Course Creation",
     text: "Hands-on courses and learning paths built from real work, not textbooks — made to teach what we wish we had.",
-    href: "#products",
+    href: "/media",
   },
   {
     number: "04",
     title: "Teaching & Mentorship",
     text: "Builders teaching builders — critiques, office hours, and small-group mentorship from people a few steps ahead.",
-    href: "#contact",
+    href: "/events",
   },
   {
     number: "05",
     title: "Learn by Building",
     text: "For the self-taught and curious — pick up skills by shipping real projects in public, with feedback that helps you improve.",
-    href: "#products",
+    href: "/blog",
   },
 ];
 
