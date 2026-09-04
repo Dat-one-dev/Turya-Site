@@ -70,11 +70,12 @@ export default function Home() {
           <div className="hero-visual" aria-hidden="true">
             <Image
               className="hero-silhouette"
-              src="/silhouette.png"
+              src="/men.gif"
               alt=""
-              width={346}
-              height={507}
+              width={692}
+              height={1014}
               priority
+              unoptimized
             />
           </div>
         </section>
