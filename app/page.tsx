@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Arrow } from "@/components/arrow";
 import { Reveal } from "@/components/reveal";
-import { SiteBackground } from "@/components/site-background";
 import { SiteHeader } from "@/components/site-header";
 
 const activities = [
@@ -28,24 +28,41 @@ const activities = [
 export default function Home() {
   return (
     <div className="site-shell">
-      <SiteBackground />
       <SiteHeader />
 
       <main>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-inner">
             <p className="eyebrow hero-kicker">A place to begin</p>
-            <h1 id="hero-title" className="wordmark">
-              TURYA
+            <h1 id="hero-title" className="hero-title">
+              Go Beyond.
+              <br />
+              <span>Make Something.</span>
             </h1>
             <p className="hero-statement">
-              A collective for builders — hosting hackathons, running game jams,
-              and making the path into tech a little more yours.
+              Turya is where young people pick up real skills — through
+              game jams, hackathons, and hands-on projects that actually ship.
             </p>
-            <a className="scroll-cue" href="#what-we-do">
-              <span>Scroll to explore</span>
-              <span className="scroll-line" aria-hidden="true" />
-            </a>
+            <div className="hero-actions">
+              <a className="hero-primary" href="mailto:hello@turya.in">
+                Get in touch
+              </a>
+              <a className="hero-secondary" href="#what-we-do">
+                Explore more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </div>
+
+          <div className="hero-visual" aria-hidden="true">
+            <Image
+              className="hero-silhouette"
+              src="/silhouette.png"
+              alt=""
+              width={346}
+              height={507}
+              priority
+            />
           </div>
         </section>
 
@@ -53,13 +70,13 @@ export default function Home() {
           <div className="section-heading">
             <Reveal>
               <p className="eyebrow">The practice</p>
-              <h2>Make room<br />for making.</h2>
+              <h2>Ecosystem<br />in action.</h2>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="section-intro">
-                Turya is part community, part studio, part excuse to start. We
-                create the conditions for ideas to become real things — together,
-                in public, without needing permission first.
+                Turya is where young builders pick up real skills — by doing, not
+                just watching. We create the conditions for ideas to become real
+                things, together, in public, without needing permission first.
               </p>
             </Reveal>
           </div>
@@ -135,7 +152,7 @@ export default function Home() {
             <h2>There is always<br />room for one more.</h2>
             <p className="closing-copy">
               Bring a half-built idea, a question, or just the urge to make
-              something. We are putting the next one together now.
+              something. The next build starts with you.
             </p>
             <a className="button-link" href="mailto:hello@turya.in">
               Say hello <Arrow />
@@ -146,7 +163,7 @@ export default function Home() {
         <section className="partners-teaser">
           <div>
             <p className="eyebrow">A separate doorway</p>
-            <p className="partners-copy">For organisations that want to support the people building what is next.</p>
+            <p className="partners-copy">For organisations that want to back the young builders building what is next.</p>
           </div>
           <Link className="quiet-link" href="/partners">Partner with us <Arrow /></Link>
         </section>
@@ -154,7 +171,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <span>© Turya 2026</span>
-        <span>Built for the curious</span>
+        <span>An ecosystem for young builders</span>
         <Link href="/partners">For brands</Link>
       </footer>
     </div>

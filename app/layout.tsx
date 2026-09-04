@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Turya — a home for builders",
+  title: "Turya — an ecosystem for young builders",
   description:
-    "A collective for people who build, learn, play, and make things together.",
+    "An ecosystem for young builders who learn, create, and ship things together.",
 };
 
 export default function RootLayout({
@@ -12,7 +12,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="starfield" aria-hidden="true" />
+        {children}
+      </body>
     </html>
   );
 }

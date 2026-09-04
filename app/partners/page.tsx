@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { Reveal } from "@/components/reveal";
-import { SiteBackground } from "@/components/site-background";
 import { SiteHeader } from "@/components/site-header";
 
 export default function PartnersPage() {
   return (
     <div className="site-shell partners-page">
-      <SiteBackground />
       <SiteHeader />
       <main>
         <section className="partner-hero">
@@ -15,9 +13,10 @@ export default function PartnersPage() {
             <p className="eyebrow">For brands / partners</p>
             <h1>Support the<br />next builder.</h1>
             <p className="partner-lede">
-              Turya brings thoughtful partners into the rooms where young
-              people learn to make. Hackathons, game jams, and useful education
-              — shaped around participation, not just placement.
+              Turya is an ecosystem for young builders. We bring thoughtful
+              partners into the rooms where young people learn to make — through
+              hackathons, game jams, and practical education shaped around
+              participation, not just placement.
             </p>
           </Reveal>
         </section>
