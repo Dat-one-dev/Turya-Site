@@ -3,24 +3,37 @@ import Image from "next/image";
 import { Arrow } from "@/components/arrow";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
+import { CbsemasteryCard } from "@/components/cbsemastery-card";
 
 const activities = [
   {
     number: "01",
-    title: "Hackathons",
-    text: "Short, focused sprints for turning a half-formed idea into something you can show.",
+    title: "Hackathons & Game Jams",
+    text: "Weekend sprints where rough ideas become playable, working things — built together and shipped together.",
     href: "#contact",
   },
   {
     number: "02",
-    title: "Game jams",
-    text: "A reason to make something weird, playable, and finished with other curious people.",
+    title: "Content & Design",
+    text: "Writing, video, and visuals — learning to make things people actually want to watch, read, and share.",
     href: "#contact",
   },
   {
     number: "03",
-    title: "Learn by doing",
-    text: "Practical education for the self-taught builder, from first syntax to shipping in public.",
+    title: "Course Creation",
+    text: "Hands-on courses and learning paths built from real work, not textbooks — made to teach what we wish we had.",
+    href: "#products",
+  },
+  {
+    number: "04",
+    title: "Teaching & Mentorship",
+    text: "Builders teaching builders — critiques, office hours, and small-group mentorship from people a few steps ahead.",
+    href: "#contact",
+  },
+  {
+    number: "05",
+    title: "Learn by Building",
+    text: "For the self-taught and curious — pick up skills by shipping real projects in public, with feedback that helps you improve.",
     href: "#products",
   },
 ];
@@ -112,21 +125,7 @@ export default function Home() {
 
           <div className="product-grid">
             <Reveal className="product-card product-card-featured" delay={0.08}>
-              <div className="product-topline">
-                <span className="product-status">Live</span>
-                <span>Education / 01</span>
-              </div>
-              <div>
-                <h3>cbse<span>mastery</span><i>.in</i></h3>
-                <p>
-                  Programming and computer-science courses for students who
-                  want to understand what they are doing, not just pass the
-                  next exam.
-                </p>
-              </div>
-              <a className="text-link" href="https://cbsemastery.in" target="_blank" rel="noreferrer">
-                Visit cbsemastery.in <Arrow />
-              </a>
+              <CbsemasteryCard />
             </Reveal>
 
             <Reveal className="product-card" delay={0.14}>

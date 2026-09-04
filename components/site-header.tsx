@@ -7,8 +7,9 @@ export function SiteHeader() {
         TURYA
       </Link>
       <nav className="desktop-nav" aria-label="Main navigation">
-        <Link href="/#what-we-do">What we do</Link>
-        <Link href="/#products">Products</Link>
+        <Link href="/events">Events</Link>
+        <Link href="/media">Media</Link>
+        <Link href="/blog">Blog</Link>
         <Link href="/partners">For brands</Link>
       </nav>
       <details className="mobile-menu">
@@ -17,8 +18,9 @@ export function SiteHeader() {
           <span />
         </summary>
         <nav aria-label="Mobile navigation">
-          <Link href="/#what-we-do">What we do</Link>
-          <Link href="/#products">Products</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/media">Media</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/partners">For brands</Link>
         </nav>
       </details>
