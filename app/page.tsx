@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Arrow } from "@/components/arrow";
+import { EventCard } from "@/components/event-card";
+import { PackageCards } from "@/components/package-cards";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { CbsemasteryCard } from "@/components/cbsemastery-card";
+import { upcomingEvents } from "@/lib/events";
 
 const activities = [
   {
@@ -144,6 +147,60 @@ export default function Home() {
               <span className="text-link text-link-muted">Coming into focus</span>
             </Reveal>
           </div>
+        </section>
+
+        <section id="events" className="content-section section-panel">
+          <Reveal>
+            <div className="section-label-line">
+              <p className="eyebrow">Upcoming events</p>
+              <Link className="quiet-link" href="/events">View all events <Arrow /></Link>
+            </div>
+            <div className="products-heading">
+              <h2>Show up<br />and ship.</h2>
+              <p className="section-intro">
+                Our next sprints — dates locked, rooms booked. Come build with
+                other young builders, leave with something shipped.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            {upcomingEvents().length === 0 ? (
+              <div className="empty-state">
+                <p className="empty-state-title">No dates locked right now — check back soon.</p>
+                <p className="empty-state-copy">
+                  When sign-ups open, they appear here first.
+                </p>
+                <Link className="text-link" href="/events">All events <Arrow /></Link>
+              </div>
+            ) : (
+              <div className="event-grid">
+                {upcomingEvents().map((ev) => (
+                  <EventCard key={ev.title} event={ev} />
+                ))}
+              </div>
+            )}
+          </Reveal>
+        </section>
+
+        <section id="packages" className="content-section products-section">
+          <Reveal>
+            <div className="section-label-line">
+              <p className="eyebrow">Popular packages</p>
+              <Link className="quiet-link" href="/partners">For brands <Arrow /></Link>
+            </div>
+            <div className="products-heading">
+              <h2>Most loved,<br />first.</h2>
+              <p className="section-intro">
+                How brands work with us, ranked by what gets picked most —
+                course, then hackathon, then ebook.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="product-grid package-grid">
+              <PackageCards order={["course", "hackathon", "ebook"]} />
+            </div>
+          </Reveal>
         </section>
 
         <section id="contact" className="closing-section section-panel">

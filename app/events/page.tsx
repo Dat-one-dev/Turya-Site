@@ -1,38 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
+import { EventCard } from "@/components/event-card";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
+import { events } from "@/lib/events";
 
 export const metadata: Metadata = {
   title: "Turya — Events",
   description:
     "Hackathons and game jams for young builders — one unified calendar of sprints, shipped together.",
 };
-
-type EventType = "hackathon" | "jam";
-type EventStatus = "upcoming" | "past" | "open";
-
-type Event = {
-  title: string;
-  type: EventType;
-  date: string;
-  description: string;
-  status: EventStatus;
-  ctaLink: string;
-  ctaLabel?: string;
-};
-
-// Add a new event by adding one object to this array — no new markup needed.
-// Leave empty for now: we have no real events scheduled yet, so the page renders
-// a clean empty state instead of fabricated placeholders.
-const events: Event[] = [];
-
-function statusLabel(status: EventStatus) {
-  if (status === "open") return "Open for signup";
-  if (status === "past") return "Past";
-  return "Upcoming";
-}
 
 export default function EventsPage() {
   return (
@@ -71,31 +49,7 @@ export default function EventsPage() {
             ) : (
               <div className="event-grid">
                 {events.map((ev) => (
-                  <div key={ev.title} className="event-card">
-                    <div className="product-topline">
-                      <span className="product-status">
-                        {ev.type === "hackathon" ? "Hackathon" : "Game jam"}
-                      </span>
-                      <span>{ev.date}</span>
-                      <span className={`event-status event-status--${ev.status}`}>{statusLabel(ev.status)}</span>
-                    </div>
-                    <div>
-                      <h3>{ev.title}</h3>
-                      <p>{ev.description}</p>
-                    </div>
-                    {ev.ctaLink ? (
-                      <a
-                        className={ev.status === "open" ? "text-link" : "text-link text-link-muted"}
-                        href={ev.ctaLink}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {ev.ctaLabel ?? (ev.status === "open" ? "Sign up" : "View recap")} <Arrow />
-                      </a>
-                    ) : (
-                      <span className="text-link text-link-muted">Details soon</span>
-                    )}
-                  </div>
+                  <EventCard key={ev.title} event={ev} />
                 ))}
               </div>
             )}

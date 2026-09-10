@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Arrow } from "@/components/arrow";
+import { PackageCards } from "@/components/package-cards";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 
@@ -28,6 +29,12 @@ export default function PartnersPage() {
               <div><span>01</span><h2>Back a build</h2><p>Put resources behind a focused hackathon or game jam.</p></div>
               <div><span>02</span><h2>Teach a room</h2><p>Share a real practice, tool, or point of view with builders.</p></div>
               <div><span>03</span><h2>Build with us</h2><p>Shape a brief or challenge that gives people something worth making.</p></div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <p className="eyebrow" style={{ marginTop: "10vw" }}>Packages</p>
+            <div className="product-grid package-grid">
+              <PackageCards />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
