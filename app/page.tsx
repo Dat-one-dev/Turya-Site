@@ -6,6 +6,7 @@ import { PackageCards } from "@/components/package-cards";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { CbsemasteryCard } from "@/components/cbsemastery-card";
+import { Marquee } from "@/components/marquee";
 import { upcomingEvents } from "@/lib/events";
 
 const activities = [
@@ -82,6 +83,8 @@ export default function Home() {
             />
           </div>
         </section>
+
+        <Marquee items={activities.map((a) => a.title)} />
 
         <section id="what-we-do" className="content-section section-panel">
           <div className="section-heading">

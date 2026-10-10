@@ -8,6 +8,7 @@ type Pkg = {
   tag: string;
   title: string;
   price: string;
+  strength?: string;
   blurb: string;
   features: string[];
   note: string;
@@ -22,7 +23,8 @@ const packages: Record<PackageId, Pkg> = {
     label: "Package 01",
     tag: "IRL / Hackathon",
     title: "Hackathon",
-    price: "$150",
+    price: "Custom",
+    strength: "Strongest format — your product taught live to a full room of builders.",
     blurb:
       "Get your brand into a real room with students. If a slot is available, we bring your product to an IRL hackathon with students.",
     features: [
@@ -30,8 +32,8 @@ const packages: Record<PackageId, Pkg> = {
       "Taught to students live at the hackathon, first",
       "Your brand on all banners and promotional material of the hackathon",
     ],
-    note: "Subject to availability.",
-    ctaHref: "mailto:partners@turya.in?subject=Package%2001%20—%20Hackathon%20(%24150)",
+    note: "Custom pricing — depends on requirements.",
+    ctaHref: "mailto:partners@turya.in?subject=Package%2001%20—%20Hackathon",
     ctaLabel: "Claim Package 01",
     featured: true,
   },
@@ -40,7 +42,7 @@ const packages: Record<PackageId, Pkg> = {
     label: "Package 02",
     tag: "Video / Course",
     title: "Course",
-    price: "$125",
+    price: "Custom",
     blurb:
       "We make a full course for your product — length depends on the product. Nobody likes reading walls of text to learn, so we make it watchable instead.",
     features: [
@@ -48,7 +50,7 @@ const packages: Record<PackageId, Pkg> = {
       "English voice-dubbed, ready to ship",
       "Yours to keep — use it as docs, upload it on your socials, even sell it commercially",
     ],
-    note: "$125 covers up to 2 hours — +$25 per extra hour.",
+    note: "Custom pricing — depends on requirements.",
     ctaHref: "mailto:partners@turya.in?subject=Package%2002%20—%20Course",
     ctaLabel: "Ask about Course",
   },
@@ -57,7 +59,7 @@ const packages: Record<PackageId, Pkg> = {
     label: "Package 03",
     tag: "Written / Ebook",
     title: "Ebook",
-    price: "$80",
+    price: "$100",
     blurb:
       "We make an ebook for your brand — a proper written course for your product, not a PDF dump.",
     features: [
@@ -65,8 +67,8 @@ const packages: Record<PackageId, Pkg> = {
       "Yours to keep — use it wherever you want",
       "Sell it commercially — full commercial rights included",
     ],
-    note: "$80 covers up to 50 pages — +$20 per extra 10 pages.",
-    ctaHref: "mailto:partners@turya.in?subject=Package%2003%20—%20Ebook%20(%2480)",
+    note: "$100 covers up to 50 pages — +$20 per extra 10 pages.",
+    ctaHref: "mailto:partners@turya.in?subject=Package%2003%20—%20Ebook%20(%24100)",
     ctaLabel: "Ask about Ebook",
   },
 };
@@ -87,6 +89,7 @@ export function PackageCards({ order = ["hackathon", "course", "ebook"] }: { ord
             <div>
               <h3>{p.title}</h3>
               <p className="package-price">{p.price}</p>
+              {p.strength ? <p className="package-strength">{p.strength}</p> : null}
               <p>{p.blurb}</p>
               <ul className="package-features">
                 {p.features.map((f) => (

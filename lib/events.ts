@@ -22,8 +22,9 @@ export const events: Event[] = [
     description:
       "A two-day IRL sprint in Delhi. Show up with a rough idea, leave with something shipped — built alongside other young builders.",
     status: "upcoming",
-    ctaLink: "",
-    cover: "/falling-sun.png",
+    ctaLink: "https://fallingsun.in",
+    ctaLabel: "Visit fallingsun.in",
+    cover: "https://www.fallingsun.in/logo_transparent.webp",
   },
 ];
 
