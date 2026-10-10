@@ -15,7 +15,7 @@ export default function MediaPage() {
   return (
     <div className="site-shell">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="partner-hero">
           <Reveal>
             <p className="eyebrow">Courses & content</p>
@@ -69,8 +69,8 @@ export default function MediaPage() {
           <Reveal delay={0.14}>
             <div className="partner-contact">
               <p className="eyebrow">Have a topic you want taught?</p>
-              <a href="mailto:hello@turya.in" className="contact-email">
-                hello@turya.in <Arrow />
+              <a href="mailto:turya.sunya@gmail.com" className="contact-email">
+                turya.sunya@gmail.com <Arrow />
               </a>
             </div>
           </Reveal>

@@ -16,7 +16,7 @@ export default function EventsPage() {
   return (
     <div className="site-shell">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="partner-hero">
           <Reveal>
             <p className="eyebrow">Events — hackathons & game jams</p>
@@ -42,7 +42,7 @@ export default function EventsPage() {
                   We’re putting the next sprint together. No fake dates or placeholder lineups — when
                   sign-ups open, they’ll appear here first.
                 </p>
-                <a className="text-link" href="mailto:hello@turya.in">
+                <a className="text-link" href="mailto:turya.sunya@gmail.com">
                   Get notified <Arrow />
                 </a>
               </div>
@@ -57,8 +57,8 @@ export default function EventsPage() {
           <Reveal delay={0.1}>
             <div className="partner-contact">
               <p className="eyebrow">Want to host or co-build one?</p>
-              <a href="mailto:hello@turya.in" className="contact-email">
-                hello@turya.in <Arrow />
+              <a href="mailto:turya.sunya@gmail.com" className="contact-email">
+                turya.sunya@gmail.com <Arrow />
               </a>
             </div>
           </Reveal>

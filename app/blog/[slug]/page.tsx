@@ -24,7 +24,7 @@ function formatDate(iso: string) {
   try {
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return iso;
-    return d.toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" });
+    return d.toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Kolkata" });
   } catch {
     return iso;
   }
@@ -94,7 +94,7 @@ export default function BlogPostPage({ params }: Params) {
   return (
     <div className="site-shell">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="partner-hero blog-post-hero">
           <Reveal>
             <p className="eyebrow">

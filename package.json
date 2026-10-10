@@ -15,6 +15,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@remotion/cli": "^4.0.534",
     "@types/node": "^20.17.10",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -22,6 +23,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.35",
     "postcss": "^8.4.49",
+    "remotion": "^4.0.534",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2"
   }

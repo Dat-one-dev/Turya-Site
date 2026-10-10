@@ -70,7 +70,7 @@ export function SiteHeader() {
   return (
     <>
       <header className={headerClass}>
-        <Link className="header-mark" href="/" aria-label="Turya home">
+        <Link className="header-mark" href="/" aria-label="Turya home" translate="no">
           TURYA
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -97,14 +97,16 @@ export function SiteHeader() {
         </button>
         <div className="scroll-progress" aria-hidden="true" />
       </header>
-      <div
+      <button
+        type="button"
         className={`mobile-drawer-backdrop${open ? " open" : ""}`}
         onClick={() => setOpen(false)}
-        aria-hidden="true"
+        aria-label="Close navigation menu"
+        tabIndex={open ? 0 : -1}
       />
       <aside className={`mobile-drawer${open ? " open" : ""}`} aria-label="Mobile navigation">
         <div className="mobile-drawer-top">
-          <span className="header-mark">TURYA</span>
+          <span className="header-mark" translate="no">TURYA</span>
           <button
             className="mobile-drawer-close"
             onClick={() => setOpen(false)}

@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "status": "RESEARCH_READY",
+  "createdAt": "2026-10-10T08:06:26.429Z",
+  "cacheKey": "990e484eca91148b1095f08bc083aade0a17ceffc460e8caa0258776047f19d3",
+  "researchMode": "abstract",
+  "visualMode": "abstract",
+  "product": "TURYA",
+  "referenceId": "openmontage-hook",
+  "brief": "/home/datonedev/Documents/Projects/Turya-Site/reel/act3/.promptible/research-brief.md",
+  "briefSha": "8de5d48c02e4df396db1ab70ea2cfb4f7cf99f27eb4a1f477529a0fccd60fbda",
+  "sources": [],
+  "logos": [],
+  "surfaces": []
+}

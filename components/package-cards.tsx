@@ -33,7 +33,7 @@ const packages: Record<PackageId, Pkg> = {
       "Your brand on all banners and promotional material of the hackathon",
     ],
     note: "Custom pricing — depends on requirements.",
-    ctaHref: "mailto:partners@turya.in?subject=Package%2001%20—%20Hackathon",
+    ctaHref: "mailto:turya.sunya@gmail.com?subject=Package%2001%20—%20Hackathon",
     ctaLabel: "Claim Package 01",
     featured: true,
   },
@@ -51,7 +51,7 @@ const packages: Record<PackageId, Pkg> = {
       "Yours to keep — use it as docs, upload it on your socials, even sell it commercially",
     ],
     note: "Custom pricing — depends on requirements.",
-    ctaHref: "mailto:partners@turya.in?subject=Package%2002%20—%20Course",
+    ctaHref: "mailto:turya.sunya@gmail.com?subject=Package%2002%20—%20Course",
     ctaLabel: "Ask about Course",
   },
   ebook: {
@@ -68,7 +68,7 @@ const packages: Record<PackageId, Pkg> = {
       "Sell it commercially — full commercial rights included",
     ],
     note: "$100 covers up to 50 pages — +$20 per extra 10 pages.",
-    ctaHref: "mailto:partners@turya.in?subject=Package%2003%20—%20Ebook%20(%24100)",
+    ctaHref: "mailto:turya.sunya@gmail.com?subject=Package%2003%20—%20Ebook%20(%24100)",
     ctaLabel: "Ask about Ebook",
   },
 };

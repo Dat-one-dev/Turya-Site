@@ -14,7 +14,7 @@ function formatDate(iso: string) {
   try {
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return iso;
-    return d.toLocaleDateString("en-IN", { year: "numeric", month: "short", day: "numeric" });
+    return d.toLocaleDateString("en-IN", { year: "numeric", month: "short", day: "numeric", timeZone: "Asia/Kolkata" });
   } catch {
     return iso;
   }
@@ -26,7 +26,7 @@ export default function BlogPage() {
   return (
     <div className="site-shell">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="partner-hero">
           <Reveal>
             <p className="eyebrow">Words & notes</p>
@@ -77,8 +77,8 @@ export default function BlogPage() {
           <Reveal delay={0.1}>
             <div className="partner-contact">
               <p className="eyebrow">Want to write with us?</p>
-              <a href="mailto:hello@turya.in" className="contact-email">
-                hello@turya.in <Arrow />
+              <a href="mailto:turya.sunya@gmail.com" className="contact-email">
+                turya.sunya@gmail.com <Arrow />
               </a>
             </div>
           </Reveal>

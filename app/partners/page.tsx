@@ -8,7 +8,7 @@ export default function PartnersPage() {
   return (
     <div className="site-shell partners-page">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="partner-hero">
           <Reveal>
             <p className="eyebrow">For brands / partners</p>
@@ -40,7 +40,7 @@ export default function PartnersPage() {
           <Reveal delay={0.1}>
             <div className="partner-contact">
               <p className="eyebrow">Start a conversation</p>
-              <a href="mailto:partners@turya.in" className="contact-email">partners@turya.in <Arrow /></a>
+              <a href="mailto:turya.sunya@gmail.com" className="contact-email">turya.sunya@gmail.com <Arrow /></a>
             </div>
           </Reveal>
         </section>

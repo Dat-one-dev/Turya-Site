@@ -13,7 +13,12 @@ export function EventCard({ event: ev }: { event: Event }) {
       <div>
         {ev.cover ? (
           <div className="event-cover">
-            <Image src={ev.cover} alt={`${ev.title} cover art`} width={1280} height={1280} />
+            <Image
+              src={ev.cover}
+              alt={`${ev.title} cover art`}
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+            />
           </div>
         ) : null}
         <h3>{ev.title}</h3>

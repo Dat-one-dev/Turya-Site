@@ -4,6 +4,8 @@ import { Arrow } from "@/components/arrow";
 import { EventCard } from "@/components/event-card";
 import { PackageCards } from "@/components/package-cards";
 import { Reveal } from "@/components/reveal";
+import { SectionRule } from "@/components/section-choreo";
+import { IntroFastForward } from "@/components/intro-fast-forward";
 import { SiteHeader } from "@/components/site-header";
 import { CbsemasteryCard } from "@/components/cbsemastery-card";
 import { Marquee } from "@/components/marquee";
@@ -45,9 +47,10 @@ const activities = [
 export default function Home() {
   return (
     <div className="site-shell">
+      <IntroFastForward />
       <SiteHeader />
 
-      <main>
+      <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-inner">
             <p className="eyebrow hero-kicker">A place to begin</p>
@@ -61,7 +64,7 @@ export default function Home() {
               game jams, hackathons, and hands-on projects that actually ship.
             </p>
             <div className="hero-actions">
-              <a className="hero-primary" href="mailto:hello@turya.in">
+              <a className="hero-primary" href="mailto:turya.sunya@gmail.com">
                 Get in touch
               </a>
               <a className="hero-secondary" href="#what-we-do">
@@ -72,15 +75,20 @@ export default function Home() {
           </div>
 
           <div className="hero-visual" aria-hidden="true">
-            <Image
-              className="hero-silhouette"
-              src="/men.gif"
-              alt=""
-              width={692}
-              height={1014}
-              priority
-              unoptimized
-            />
+            <picture>
+              <source
+                srcSet="/men.gif"
+                media="(prefers-reduced-motion: no-preference)"
+              />
+              <Image
+                className="hero-silhouette"
+                src="/men-poster.jpg"
+                alt=""
+                width={692}
+                height={1014}
+                priority
+              />
+            </picture>
           </div>
         </section>
 
@@ -92,7 +100,7 @@ export default function Home() {
               <p className="eyebrow">The practice</p>
               <h2>Ecosystem<br />in action.</h2>
             </Reveal>
-            <Reveal delay={0.08}>
+            <Reveal delay={0.05}>
               <p className="section-intro">
                 Turya is where young builders pick up real skills — by doing, not
                 just watching. We create the conditions for ideas to become real
@@ -103,7 +111,7 @@ export default function Home() {
 
           <div className="activity-list">
             {activities.map((activity, index) => (
-              <Reveal key={activity.number} delay={index * 0.06}>
+              <Reveal key={activity.number} delay={index * 0.05}>
                 <Link className="activity-row" href={activity.href}>
                   <span className="row-number">{activity.number}</span>
                   <span className="row-title">{activity.title}</span>
@@ -116,7 +124,8 @@ export default function Home() {
         </section>
 
         <section id="products" className="content-section products-section">
-          <Reveal>
+          <SectionRule />
+          <Reveal delay={0.15}>
             <div className="section-label-line">
               <p className="eyebrow">Things worth opening</p>
               <span className="section-index">02 / 03</span>
@@ -131,11 +140,11 @@ export default function Home() {
           </Reveal>
 
           <div className="product-grid">
-            <Reveal className="product-card product-card-featured" delay={0.08}>
+            <Reveal className="product-card product-card-featured" delay={0.05}>
               <CbsemasteryCard />
             </Reveal>
 
-            <Reveal className="product-card" delay={0.14}>
+            <Reveal className="product-card" delay={0.1}>
               <div className="product-topline">
                 <span className="product-status product-status-muted">Next</span>
                 <span>Experiments / 02</span>
@@ -153,7 +162,8 @@ export default function Home() {
         </section>
 
         <section id="events" className="content-section section-panel">
-          <Reveal>
+          <SectionRule />
+          <Reveal delay={0.15}>
             <div className="section-label-line">
               <p className="eyebrow">Upcoming events</p>
               <Link className="quiet-link" href="/events">View all events <Arrow /></Link>
@@ -166,7 +176,7 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.05}>
             {upcomingEvents().length === 0 ? (
               <div className="empty-state">
                 <p className="empty-state-title">No dates locked right now — check back soon.</p>
@@ -186,7 +196,8 @@ export default function Home() {
         </section>
 
         <section id="packages" className="content-section products-section">
-          <Reveal>
+          <SectionRule />
+          <Reveal delay={0.15}>
             <div className="section-label-line">
               <p className="eyebrow">Popular packages</p>
               <Link className="quiet-link" href="/partners">For brands <Arrow /></Link>
@@ -199,7 +210,7 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.05}>
             <div className="product-grid package-grid">
               <PackageCards order={["course", "hackathon", "ebook"]} />
             </div>
@@ -214,7 +225,7 @@ export default function Home() {
               Bring a half-built idea, a question, or just the urge to make
               something. The next build starts with you.
             </p>
-            <a className="button-link" href="mailto:hello@turya.in">
+            <a className="button-link" href="mailto:turya.sunya@gmail.com">
               Say hello <Arrow />
             </a>
           </Reveal>
