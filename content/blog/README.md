@@ -23,4 +23,4 @@ Fields:
 - `excerpt` — short description for the listing page
 
 No code changes needed — adding the file is enough. It will appear on `/blog` at the next build.
-No fake posts are included by design; an empty `content/blog/` renders a clean empty state.
+No fake posts are included by design; an empty `content/blog/` simply falls back to the curated DEV post list on `/blog`.

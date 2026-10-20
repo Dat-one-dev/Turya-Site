@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Arrow } from "@/components/arrow";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
+import { DEV_PROFILE_URL, devPosts } from "@/lib/dev-posts";
 import { getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Turya — Blog",
-  description: "Notes from the Turya ecosystem — writing on building, learning, and making things together.",
+  description:
+    "Notes from the Turya ecosystem — build logs, lessons, and popular writing from Kartik Patel on DEV.",
 };
 
 function formatDate(iso: string) {
@@ -37,24 +39,15 @@ export default function BlogPage() {
             </h1>
             <p className="partner-lede">
               Writing from the studio and the community — build logs, lessons, and small ideas worth
-              sharing. New posts appear here as we write them.
+              sharing. Most of it lives on DEV; the posts people come back to most are collected here.
             </p>
           </Reveal>
         </section>
 
         <section className="partner-details section-panel">
-          <Reveal>
-            <p className="eyebrow">Articles</p>
-            {posts.length === 0 ? (
-              <div className="empty-state">
-                <p className="empty-state-title">No articles yet — writing is in progress.</p>
-                <p className="empty-state-copy">
-                  We’re not publishing placeholders. When the first post is ready, it will appear here.
-                  To add one, drop a Markdown file in <code>content/blog/</code> — see the README in
-                  that folder for the simple frontmatter format Kartik can use without touching code.
-                </p>
-              </div>
-            ) : (
+          {posts.length > 0 && (
+            <Reveal>
+              <p className="eyebrow">From the Turya blog</p>
               <div className="blog-list">
                 {posts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-row">
@@ -71,10 +64,47 @@ export default function BlogPage() {
                   </Link>
                 ))}
               </div>
-            )}
+            </Reveal>
+          )}
+
+          <Reveal delay={posts.length > 0 ? 0.1 : 0}>
+            <p className="eyebrow">Popular on DEV</p>
+            <p className="blog-intro">
+              Longer write-ups live on DEV. These are the ones people keep coming back to.
+            </p>
+            <div className="blog-list">
+              {devPosts.map((post) => (
+                <a
+                  key={post.url}
+                  href={post.url}
+                  className="blog-row"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="blog-row-meta">
+                    <span className="blog-row-date">{formatDate(post.date)}</span>
+                  </div>
+                  <div className="blog-row-main">
+                    <h3 className="blog-row-title">{post.title}</h3>
+                    <p className="blog-row-excerpt">{post.excerpt}</p>
+                  </div>
+                  <span className="blog-row-cta">
+                    Read on DEV <Arrow />
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a
+              className="text-link blog-all-link"
+              href={DEV_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              All posts on DEV <Arrow />
+            </a>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={posts.length > 0 ? 0.2 : 0.1}>
             <div className="partner-contact">
               <p className="eyebrow">Want to write with us?</p>
               <a href="mailto:turya.sunya@gmail.com" className="contact-email">

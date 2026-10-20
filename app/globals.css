@@ -409,6 +409,8 @@ h2 { font-size: clamp(44px, 7.4vw, 108px); font-weight: 200; letter-spacing: -.0
 .blog-row-excerpt { color: var(--fog); font-size: 13px; line-height: 1.5; margin: 8px 0 0; max-width: 520px; }
 .blog-row-cta { align-items: center; color: var(--fog); display: inline-flex; font-size: 10px; gap: 8px; justify-content: flex-end; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
 .blog-row-cta .arrow { font-size: 16px; }
+.blog-intro { color: var(--fog); font-size: 13px; line-height: 1.5; margin: 14px 0 0; max-width: 560px; }
+.blog-all-link { margin-top: 32px; }
 
 .blog-post-hero h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.05; max-width: 760px; }
 .blog-post-body { padding-bottom: 10vw; }
